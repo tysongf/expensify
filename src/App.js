@@ -1,6 +1,6 @@
 import ExpenseList from "./components/Expenses/ExpenseList";
 
-function App() {
+const App = () => {
    const expenses = [
       {
          id: "e1",
@@ -34,6 +34,6 @@ function App() {
          <ExpenseList expenses={expenses} />
       </div>
    );
-}
+};
 
 export default App;
