@@ -30,7 +30,7 @@ const App = () => {
 
    return (
       <div>
-         <h2>I 💖 React!</h2>
+         <h2 className="welcome">I 💖 Node.js and React!</h2>
          <ExpenseList expenses={expenses} />
       </div>
    );
