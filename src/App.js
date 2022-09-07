@@ -7,6 +7,8 @@ function App() {
          <p>I 💖 React</p>
 
          <ExpenseItem />
+         <ExpenseItem />
+         <ExpenseItem />
       </div>
    );
 }
