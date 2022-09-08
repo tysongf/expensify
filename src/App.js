@@ -33,9 +33,9 @@ const App = () => {
    const [expenses, setExpenses] = useState(DUMMY_EXPENSES);
 
    const addExpenseHandler = (newExpense) => {
-      //Important. Use function to receive existing expenses from the state returned by useState function
+      //Important. Use the state 'set' function to receive and modify prevExpenses
       setExpenses((prevExpenses) => {
-         return [...prevExpenses, newExpense]; //return prevExpenses plus the new expense
+         return [newExpense, ...prevExpenses]; //return prevExpenses plus the new expense
       });
    };
 
