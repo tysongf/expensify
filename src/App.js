@@ -1,8 +1,9 @@
+import { useState } from "react";
 import ExpenseList from "./components/Expenses/ExpenseList";
 import NewExpense from "./components/NewExpense/NewExpense";
 
 const App = () => {
-   const expenses = [
+   const DUMMY_EXPENSES = [
       {
          id: "e1",
          title: "Toilet Paper",
@@ -29,14 +30,18 @@ const App = () => {
       },
    ];
 
-   const submitExpenseHandler = (expense) => {
-      console.log("App.js");
-      console.log(expense);
+   const [expenses, setExpenses] = useState(DUMMY_EXPENSES);
+
+   const addExpenseHandler = (newExpense) => {
+      //Important. Use function to receive existing expenses from the state returned by useState function
+      setExpenses((prevExpenses) => {
+         return [...prevExpenses, newExpense]; //return prevExpenses plus the new expense
+      });
    };
 
    return (
       <div>
-         <NewExpense onSubmitExpense={submitExpenseHandler} />
+         <NewExpense onSubmitExpense={addExpenseHandler} />
          <ExpenseList expenses={expenses} />
       </div>
    );
