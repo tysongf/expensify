@@ -15,7 +15,9 @@ const ExpenseList = (props) => {
       return expense.date.getFullYear().toString() === yearFilter;
    });
 
-   let expensesContent = <p>No expenses found.</p>;
+   let expensesContent = (
+      <h2 className="expenses-list__fallback">No expenses found.</h2>
+   );
    if (filteredExpenses.length > 0) {
       expensesContent = filteredExpenses.map((expense) => (
          <ExpenseItem
