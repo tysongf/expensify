@@ -22,6 +22,7 @@ const NewExpenseForm = (props) => {
       setExpTitle("");
       setExpAmount("");
       setExpDate("");
+      props.onCloseForm();
    };
 
    return (
@@ -57,6 +58,7 @@ const NewExpenseForm = (props) => {
             </div>
          </div>
          <div className="new-expense__actions">
+            <button onClick={props.onCloseForm}>Cancel</button>
             <button type="submit">Add Expense</button>
          </div>
       </form>
