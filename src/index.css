@@ -12,13 +12,8 @@ body {
    margin: 0;
    padding: 0;
    background-color: #3f3f3f;
-   color: #ffcc00;
 }
 
 div#root {
    margin: 20px;
-}
-
-h2.welcome {
-   text-align: center;
 }
