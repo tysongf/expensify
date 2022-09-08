@@ -29,9 +29,14 @@ const App = () => {
       },
    ];
 
+   const submitExpenseHandler = (expense) => {
+      console.log("App.js");
+      console.log(expense);
+   };
+
    return (
       <div>
-         <NewExpense />
+         <NewExpense onSubmitExpense={submitExpenseHandler} />
          <ExpenseList expenses={expenses} />
       </div>
    );

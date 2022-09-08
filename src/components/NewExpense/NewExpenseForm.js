@@ -2,7 +2,7 @@ import React from "react";
 import "./NewExpenseForm.css";
 import { useState } from "react";
 
-const NewExpenseForm = () => {
+const NewExpenseForm = (props) => {
    const [expTitle, setExpTitle] = useState("");
    const [expAmount, setExpAmount] = useState("");
    const [expDate, setExpDate] = useState("");
@@ -18,7 +18,7 @@ const NewExpenseForm = () => {
          amount: expAmount,
          date: new Date(expDate),
       };
-      console.log(newExpense);
+      props.onSubmitExpense(newExpense);
       setExpTitle("");
       setExpAmount("");
       setExpDate("");
@@ -42,6 +42,7 @@ const NewExpenseForm = () => {
                   onChange={amountChangeHandler}
                   min="0.01"
                   step="0.01"
+                  value={expAmount}
                ></input>
             </div>
             <div className="new-expense__control">
@@ -51,6 +52,7 @@ const NewExpenseForm = () => {
                   onChange={dateChangeHandler}
                   min="2020-01-01"
                   max="2022-12-31"
+                  value={expDate}
                ></input>
             </div>
          </div>
