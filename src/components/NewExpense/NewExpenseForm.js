@@ -15,7 +15,7 @@ const NewExpenseForm = (props) => {
       event.preventDefault(); //prevent http request
       const newExpense = {
          title: expTitle,
-         amount: expAmount,
+         amount: +expAmount,
          date: new Date(expDate),
       };
       props.onSubmitExpense(newExpense);
